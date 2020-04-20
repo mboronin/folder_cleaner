@@ -2,11 +2,16 @@ import os
 import subprocess
 import sys
 
+#TODO Add quiet mode
+#TODO Add logging
+#TODO Add filetypes not extensions only
+#TODO Allow several folders
+#TODO Add tests
+
+
 '''
 gets an absolute path to a folder
 '''
-
-
 def main(path):
     try:
         folder = find_folder(path)
