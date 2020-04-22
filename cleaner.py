@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import subprocess
 import sys
@@ -86,9 +88,9 @@ class MyCleaner:
                     continue
                 name, file_extension = os.path.splitext(filename)
                 extension = file_extension[1:].lower()
-                if extension_counter[extension] < 5:
-                    continue
                 ext_folder = self.folder + '/' + extension
+                if extension_counter[extension] < 5 and not check_if_folder_exists(ext_folder):
+                    continue
                 if check_if_folder_exists(ext_folder):
                     move_file_to_folder(filepath, ext_folder)
                 else:
